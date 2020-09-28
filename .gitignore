@@ -5,3 +5,6 @@ config.js
 service-key.json
 
 property-information-for-firestore.json
+
+# Local Netlify folder
+.netlify
