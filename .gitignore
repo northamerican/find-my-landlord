@@ -1,4 +1,7 @@
 node_modules
+.DS_Store
+
 config.js
 service-key.json
-.DS_Store
+
+property-information-for-firestore.json
