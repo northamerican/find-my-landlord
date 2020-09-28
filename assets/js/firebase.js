@@ -1,18 +1,18 @@
 // Initialize Cloud Firestore through Firebase
 var firebaseConfig = {
-	apiKey: "AIzaSyDfYrR3qErDogK_rqhzn49jlgshrJ6O_ic",
-	authDomain: "find-my-landlord.firebaseapp.com",
-	databaseURL: "https://find-my-landlord.firebaseio.com",
-	projectId: "find-my-landlord",
-	storageBucket: "find-my-landlord.appspot.com",
-	messagingSenderId: "470878094978",
-	appId: "1:470878094978:web:ebc5b2350e17f590af569b",
-	measurementId: "G-C7MQBH19E6"
+  apiKey: "AIzaSyCqWOvIXqA5K6hGHh1WN3ShfcPkgz1nylk",
+  authDomain: "find-my-landlord-mtl.firebaseapp.com",
+  databaseURL: "https://find-my-landlord-mtl.firebaseio.com",
+  projectId: "find-my-landlord-mtl",
+  storageBucket: "find-my-landlord-mtl.appspot.com",
+  messagingSenderId: "1044042294237",
+  appId: "1:1044042294237:web:71d05a181a6e411cbf4c34",
+  measurementId: "G-R1HRE7GT95"
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+// firebase.analytics();
 
 firebase.auth().signInAnonymously().catch(function(error) {
 	console.log(error.code);

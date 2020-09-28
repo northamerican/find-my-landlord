@@ -1,24 +1,24 @@
 // Column headers
-var propertyAddressColumn = "Property Address";
-var communityAreaColumn = "Community Area";
-var propertyIndexColumn = "Property Index Number";
-var taxpayerColumn = "Taxpayer";
-var taxpayerMatchCodeColumn = "Taxpayer Match Code";
+var propertyAddressColumn = "Adresse";
+var communityAreaColumn = "Arrondissement";
+var propertyIndexColumn = "Numéro de lot"; // Property Index Number
+var taxpayerColumn = "Nom";
+var taxpayerMatchCodeColumn = "Affiliated With"; //"Taxpayer Match Code";
+var ownedColumn = "Properties Held by Taxpayer Match Code";
+var unitColumn = "Nombre de logements";
 var affiliatedWithColumn = "Affiliated With";
 var additionalDetailsColumn = "Additional Details";
-var ownedColumn = "Properties Held by Taxpayer Match Code";
-var unitColumn = "Unit Count from Department of Buildings";
-var relativeSizeColumn = "Relative Size";
+var relativeSizeColumn = "Nombre de logements"; // "Relative Size";
 
 // Database reference
-var databaseCollectionName = "features-08-09-2020-05-48-PM";
+var databaseCollectionName = "features";
 // JSON search
-var searchIndex = "https://find-my-landlord.nyc3.cdn.digitaloceanspaces.com/search-index-08-09-2020-05-48-PM.json";
+var searchIndex = "/search-index.json";
 // Map tiles
-var tiles = "https://find-my-landlord.nyc3.cdn.digitaloceanspaces.com/features-08-09-2020-05-48-PM/{z}/{x}/{y}.pbf";
+var tiles = "http://127.0.0.1:8080/features/{z}/{x}/{y}.pbf";
 
 // Mapbox key
-mapboxgl.accessToken = "pk.eyJ1IjoibHVjaWVubGl6bGVwaW9yeiIsImEiOiJja2M2YTN3dG8wYmZlMnp0ZXBzZzJuM3JsIn0.n6bA8boNS3LQW1izwa6MKg";
+mapboxgl.accessToken = "pk.eyJ1Ijoibm9ydGhhbWVyaWNhbiIsImEiOiJja2V5bWU4aGkwYXlzMnJxY2tteHY5aHg5In0.icsJb73KMz8GEPuuIbY2YA";
 
 // Colors
 var dsaRed = "#ec1f27";
@@ -38,7 +38,7 @@ var highlightZoom = 14;
 // Change colors based on landlord size
 var defaultColors = [
 	"case",
-	[">=", ["get", ownedColumn], 100],
+	[">=", ["get", ownedColumn], 50],
 	color4,
 	[">=", ["get", ownedColumn], 10],
 	color3,

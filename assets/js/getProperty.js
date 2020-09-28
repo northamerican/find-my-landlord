@@ -33,7 +33,9 @@ function searchRelatedProperties(taxpayerMatchCode) {
 	};
 
 	return new Promise(function(resolve, reject) {
-		if (sessionStorage.getItem(taxpayerMatchCode)) {
+		// if (sessionStorage.getItem(taxpayerMatchCode)) {
+		// ! re-enable
+		if (false && sessionStorage.getItem(taxpayerMatchCode)) {
 			// Get array from sessionStorage
 			allPropertiesOwned = JSON.parse(sessionStorage.getItem(taxpayerMatchCode));
 			// Return array
@@ -164,10 +166,17 @@ function renderSelectedMarker(feature) {
 };
 
 function renderSelectedInfo(feature) {
+	// var address = feature[propertyAddressColumn];
+	// var affiliatedWith = feature[affiliatedWithColumn];
+	// var owned = feature[ownedColumn];
+	// var taxpayer = feature[taxpayerColumn];
+	// var taxpayerMatchCode = feature[taxpayerMatchCodeColumn];
+	// var additionalDetails = feature[additionalDetailsColumn];
 	var address = feature.properties[propertyAddressColumn];
 	var affiliatedWith = feature.properties[affiliatedWithColumn];
 	var owned = feature.properties[ownedColumn];
 	var taxpayer = feature.properties[taxpayerColumn];
+	var units = feature.properties[unitColumn];
 	var taxpayerMatchCode = feature.properties[taxpayerMatchCodeColumn];
 	var additionalDetails = feature.properties[additionalDetailsColumn];
 
@@ -237,11 +246,11 @@ function renderSelectedInfo(feature) {
 					// Create PDF
 					createPDF(pdfTitle, properties);
 					// Log event
-					firebase.analytics().logEvent("PDF-downloaded", { 
-						property_address: address,
-						taxpayer: taxpayer,
-						affiliated_with: affiliatedWith,
-					});
+					// firebase.analytics().logEvent("PDF-downloaded", { 
+					// 	property_address: address,
+					// 	taxpayer: taxpayer,
+					// 	affiliated_with: affiliatedWith,
+					// });
 				} catch (err) {
 					console.log("Async function to search related properties failed");
 					downloadButton.innerHTML = "Oops, generating a PDF failed. Try again later.";
@@ -268,6 +277,20 @@ function renderSelectedInfo(feature) {
 	} else {
 		// Hide row
 		ownedRow.style.display = "none";
+	};
+
+	// Units info
+	var unitsRow = document.getElementById("units-row");
+	// Check if data exists
+	if (units) {
+		// Show row
+		unitsRow.style.display = "block";
+		// Set value
+		var unitsValues = document.getElementById("units-value");
+		unitsValues.innerText = units
+	} else {
+		// Hide row
+		unitsRow.style.display = "none";
 	};
 
 	// Style row backgronds

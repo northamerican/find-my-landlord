@@ -1,7 +1,7 @@
 // NPM package
 const firestoreService = require("firestore-export-import");
 // API keys
-const firebaseConfig = require("./config.js");
+const firebaseUrl = "https://find-my-landlord-mtl.firebaseio.com"
 // Firebase service key
 const serviceAccount = require("./service-key.json");
 
@@ -9,10 +9,10 @@ const serviceAccount = require("./service-key.json");
 const jsonToFirestore = async () => {
 	try {
 		console.log("Initialzing Firebase");
-		await firestoreService.initializeApp(serviceAccount, firebaseConfig.databaseURL);
+		firestoreService.initializeApp(serviceAccount, firebaseUrl);
 		console.log("Firebase Initialized");
 
-		await firestoreService.restore("./features.json");
+		await firestoreService.restore(__dirname + "/../../property-information-for-firestore.json");
 		console.log("Upload Success");
 	}
 	catch (error) {

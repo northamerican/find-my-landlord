@@ -150,11 +150,11 @@ function createListItem(feature) {
 				// Update it
 				renderSelectedUI(selected);
 				// Log event
-				firebase.analytics().logEvent("search-result-clicked", { 
-					property_address: selected.properties[propertyAddressColumn],
-					taxpayer: selected.properties[taxpayerColumn],
-					affiliated_with: selected.properties[affiliatedWithColumn],
-				});
+				// firebase.analytics().logEvent("search-result-clicked", { 
+				// 	property_address: selected.properties[propertyAddressColumn],
+				// 	taxpayer: selected.properties[taxpayerColumn],
+				// 	affiliated_with: selected.properties[affiliatedWithColumn],
+				// });
 
 				// Hide spinner
 				spinner.style.display = "none";
