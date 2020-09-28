@@ -2,7 +2,8 @@
 var map = new mapboxgl.Map({
 		container: "map",
 		style: 'mapbox://styles/northamerican/ckf7suzpd0gx219mhjwhbqb0s',
-		center: [-73.576477, 45.479404], // Atwater Market
+		center: [-73.566520, 45.500100], // Gare Centrale
+		bearing: -57, // -57 degrees is north
 		zoom: 12,
 		attributionControl: false
 	});

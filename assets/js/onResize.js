@@ -18,6 +18,7 @@ function fitBounds() {
 			bottom: 40, 
 			left: 40
 		},
+		bearing: map.getBearing(),
 		maxZoom: 16
 	});
 };
