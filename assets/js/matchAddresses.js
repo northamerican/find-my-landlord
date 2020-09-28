@@ -162,7 +162,9 @@ function createListItem(feature) {
 				// Show error message
 				resetSearchResults();
 				var title = "Database error";
-				var message = "Sorry, we couldn't look up that property's details. Try again in an hour, or <a href='mailto:'mailto:tenantscdsa@gmail.com'>contact us</a>."
+				// !
+				// var message = "Sorry, we couldn't look up that property's details. Try again in an hour, or <a href='mailto:'mailto:tenantscdsa@gmail.com'>contact us</a>."
+				var message = "Sorry, we couldn't look up that property's details. Try again in an hour, or <a href=''>contact us</a>."
 				showSearchMessage(title, message);
 
 				// Hide spinner

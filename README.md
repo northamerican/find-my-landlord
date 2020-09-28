@@ -1,3 +1,7 @@
+Montreal version of [Chicago DSA](https://github.com/ChicagoDSA)'s Find My Landlord web app.
+
+Forked from: https://github.com/ChicagoDSA/find-my-landlord
+
 # Find My Landlord
 [Chicago DSA](https://www.chicagodsa.org/), the [Lift the Ban Coalition](https://www.ltbcoalition.org/), and local allies have partnered to provide Chicago tenants the ability to:
 - Look up any registered rental property in the City of Chicago
