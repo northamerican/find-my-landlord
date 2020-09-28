@@ -1,8 +1,8 @@
 // Set map defaults
 var map = new mapboxgl.Map({
 		container: "map",
-		style: "mapbox://styles/lucienlizlepiorz/ckd61fpi915jk1ioyhcpvd10y",
-		center: [-87.6441, 41.8846], // Haymarket Square
+		style: 'mapbox://styles/northamerican/ckf7suzpd0gx219mhjwhbqb0s',
+		center: [-73.576477, 45.479404], // Atwater Market
 		zoom: 12,
 		attributionControl: false
 	});
@@ -10,7 +10,7 @@ var map = new mapboxgl.Map({
 // Create legend
 var legendContainer = document.createElement("div");
 var legendTitle = document.createElement("h4");
-var legend100plus = document.createElement("div");
+var legend50plus = document.createElement("div");
 var legend10plus = document.createElement("div");
 var legend3plus = document.createElement("div");
 var legendLess3 = document.createElement("div");
@@ -19,7 +19,7 @@ var legendUndetermined = document.createElement("div");
 // Set content
 legendContainer.id = "legend";
 legendTitle.innerHTML = "Owned by a landlord with...";
-legend100plus.innerHTML = "<span style='background-color: "+color4+"'></span>100+ properties";
+legend50plus.innerHTML = "<span style='background-color: "+color4+"'></span>50+ properties";
 legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ properties";
 legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ properties";
 legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 properties";
@@ -38,7 +38,7 @@ var bottomRightControl = bottomRightClass[0];
 // Add legend inside control
 bottomRightControl.insertBefore(legendContainer, bottomRightControl.firstChild);
 legendContainer.appendChild(legendTitle);
-legendContainer.appendChild(legend100plus);
+legendContainer.appendChild(legend50plus);
 legendContainer.appendChild(legend10plus);
 legendContainer.appendChild(legend3plus);
 legendContainer.appendChild(legendLess3);
@@ -54,7 +54,8 @@ map.on("load", function() {
 	request.open("GET", searchIndex, true);
 	request.onload = function() {
 		if (this.status >= 200 && this.status < 400) {
-			json = JSON.parse(this.response);
+			const { searchIndex } = JSON.parse(this.response);
+			json = searchIndex
 
 			// Set source data
 			map.addSource("propertyData", {
@@ -63,7 +64,7 @@ map.on("load", function() {
 				tiles: [tiles],
 				promoteId: propertyIndexColumn
 			});
-			
+
 			map.addLayer({
 				"id": "allProperties",
 				"type": "circle",
@@ -229,11 +230,11 @@ function setHoverState (sourceData, sourceLayer, hoverLayer) {
 			// Update it
 			renderSelectedUI(buildingAtPoint);
 			// Log event
-			firebase.analytics().logEvent("map-point-clicked", { 
-				property_address: buildingAtPoint.properties[propertyAddressColumn],
-				taxpayer: buildingAtPoint.properties[taxpayerColumn],
-				affiliated_with: buildingAtPoint.properties[affiliatedWithColumn],
-			});
+			// firebase.analytics().logEvent("map-point-clicked", { 
+			// 	property_address: buildingAtPoint.properties[propertyAddressColumn],
+			// 	taxpayer: buildingAtPoint.properties[taxpayerColumn],
+			// 	affiliated_with: buildingAtPoint.properties[affiliatedWithColumn],
+			// });
 		};
 	});
 

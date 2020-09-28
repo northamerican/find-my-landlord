@@ -1,3 +1,5 @@
 node_modules
 config.js
 service-key.json
+/features/
+.DS_Store
