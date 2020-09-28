@@ -15,7 +15,7 @@ var databaseCollectionName = "features";
 // JSON search
 var searchIndex = "/search-index.json";
 // Map tiles
-var tiles = "http://127.0.0.1:8080/features/{z}/{x}/{y}.pbf";
+var tiles = "/features/{z}/{x}/{y}.pbf";
 
 // Mapbox key
 mapboxgl.accessToken = "pk.eyJ1Ijoibm9ydGhhbWVyaWNhbiIsImEiOiJja2V5bWU4aGkwYXlzMnJxY2tteHY5aHg5In0.icsJb73KMz8GEPuuIbY2YA";
