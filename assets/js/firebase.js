@@ -12,7 +12,7 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
+firebase.analytics();
 
 firebase.auth().signInAnonymously().catch(function(error) {
 	console.log(error.code);

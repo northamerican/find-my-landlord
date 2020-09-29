@@ -246,11 +246,11 @@ function renderSelectedInfo(feature) {
 					// Create PDF
 					createPDF(pdfTitle, properties);
 					// Log event
-					// firebase.analytics().logEvent("PDF-downloaded", { 
-					// 	property_address: address,
-					// 	taxpayer: taxpayer,
-					// 	affiliated_with: affiliatedWith,
-					// });
+					firebase.analytics().logEvent("PDF-downloaded", { 
+						property_address: address,
+						taxpayer: taxpayer,
+						affiliated_with: affiliatedWith,
+					});
 				} catch (err) {
 					console.log("Async function to search related properties failed");
 					downloadButton.innerHTML = "Oops, generating a PDF failed. Try again later.";
