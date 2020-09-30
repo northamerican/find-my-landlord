@@ -85,3 +85,4 @@ var searchResultsContainer = document.getElementById("search-results-container")
 var searchResultsCounter = document.getElementById("search-results-counter");
 var searchResultsList = document.getElementById("search-results-list");
 var selectedContainer = document.getElementById("selected-container");
+var dataInfoLink = document.getElementById("legal-notice");
