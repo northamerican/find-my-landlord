@@ -163,6 +163,9 @@ function setHoverState (sourceData, sourceLayer, hoverLayer) {
 		};
 
 		if (buildingAtPoint) {
+			if (selectedContainer.style.display !== "block") {
+				searchInput.value = buildingAtPoint.properties[propertyAddressColumn];
+			}
 			map.getCanvas().style.cursor = "pointer";
 			// Remove existing state
 			if (buildingID) {
@@ -248,6 +251,9 @@ function setHoverState (sourceData, sourceLayer, hoverLayer) {
 	});
 
 	map.on("mouseleave", hoverLayer, function() {
+		if (selectedContainer.style.display !== "block") {
+			searchInput.value = ''
+		}
 		// Hover to false
 		if (buildingID) {
 			if (sourceLayer != null) {
