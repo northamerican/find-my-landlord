@@ -33,9 +33,7 @@ function searchRelatedProperties(taxpayerMatchCode) {
 	};
 
 	return new Promise(function(resolve, reject) {
-		// if (sessionStorage.getItem(taxpayerMatchCode)) {
-		// ! re-enable
-		if (false && sessionStorage.getItem(taxpayerMatchCode)) {
+		if (sessionStorage.getItem(taxpayerMatchCode)) {
 			// Get array from sessionStorage
 			allPropertiesOwned = JSON.parse(sessionStorage.getItem(taxpayerMatchCode));
 			// Return array
