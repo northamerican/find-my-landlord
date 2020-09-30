@@ -4,3 +4,8 @@ var dataInfoContent = `<h5>Note: properties may have changed ownership since the
 `
 
 //<p>For owners affiliated with at least 5 properties, matches were researched and <b>affiliated</b> with particular corporations, managers, or landlords based on information in the <a href="https://www.ilsos.gov/corporatellc/CorporateLlcController">Illinois Secretary of State LLC Search</a> and other public records, including the <a href="https://cookrecorder.com/search-our-records/">Cook County Recorder of Deeds</a>.</p>
+
+var legalNoticeContent = `<p>This tool is provides publicly accessible information for non-commercial and educational purposes only.</p>
+  <p>This tool is for use as a reference and its authors do not guarantee the information provided is current or accurate.</p>
+  <p>The companies, names and trademarks are the property of their respective owners. The authors of this tool do not claim ownership or affiliation with any person or company displayed.</p>
+`

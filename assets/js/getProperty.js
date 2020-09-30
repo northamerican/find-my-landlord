@@ -1,3 +1,5 @@
+attachModal(dataInfoLink, "Legal Notice", legalNoticeContent);
+
 function searchProperty(id) {
 	var feature;
 
