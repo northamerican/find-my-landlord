@@ -49,6 +49,13 @@ legendContainer.appendChild(legendUndetermined);
 var navigationControl = new mapboxgl.NavigationControl();
 map.addControl(navigationControl, "top-right");
 
+var flex = new FlexSearch({
+	doc: {
+		id: propertyIndexColumn,
+		field: ["search"]
+	},
+});
+
 map.on("load", function() {
 	// Load search keys
 	var request = new XMLHttpRequest();
@@ -56,7 +63,8 @@ map.on("load", function() {
 	request.onload = function() {
 		if (this.status >= 200 && this.status < 400) {
 			const { searchIndex } = JSON.parse(this.response);
-			json = searchIndex
+
+			flex.add(searchIndex)
 
 			// Set source data
 			map.addSource("propertyData", {
