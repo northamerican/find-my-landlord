@@ -11,24 +11,10 @@ function matchAddresses(e) {
 	resetMap();
 
 	if (value != "") {
-		// Create empty array of results
-		var results = [];
-
-		for (var i = 0; i < json.length && results.length < searchResultsLimit+1; i++) {
-			// Address at current index
-			if (json[i][propertyAddressColumn]) {
-				var address = json[i][propertyAddressColumn].trim().toLowerCase();
-				// Check if this address includes the input text
-				if (address.indexOf(value) > -1) {
-					// Add feature to results array
-					results.push(json[i]);
-				};
-			};
-		};
+		var results = flex.search(value, 10)
 
 		// Render list
-		console.log("search results populated");
-		renderResults(results);
+		renderResults(results)
 	};
 };
 
