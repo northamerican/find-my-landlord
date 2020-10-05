@@ -1,5 +1,18 @@
 var searchResultsLimit = 50;
 
+
+// i18next ui translations
+appTitle.innerHTML = i18next.t('TITLE')
+cityName.innerHTML = i18next.t('CITY')
+legalNoticeLink.innerHTML = `<b>${i18next.t('LEGAL_NOTICE_TITLE')}</b>`
+affiliatedLabel.innerHTML = i18next.t('AFFILIATED_LABEL')
+ownedLabel.innerHTML = i18next.t('OWNED_LABEL')
+taxpayerLabel.innerHTML = i18next.t('TAXPAYER_LABEL')
+unitsLabel.innerHTML = i18next.t('UNITS_LABEL')
+dataInfoLink.innerHTML = i18next.t('DATA_INFO_TITLE')
+additionalDetailsLink.innerHTML = i18next.t('ADDITIONAL_DETAILS_LABEL')
+
+
 function matchAddresses(e) {
 	var value = e.target.value.trim().toLowerCase();
 
@@ -11,7 +24,7 @@ function matchAddresses(e) {
 	resetMap();
 
 	if (value != "") {
-		var results = flex.search(value, 10)
+		var results = flex.search(value, 51)
 
 		// Render list
 		renderResults(results)
@@ -57,18 +70,18 @@ function renderResults(features) {
 
 		if (features.length > searchResultsLimit) {
 			// More results than limit
-			searchResultsCounter.innerHTML = "<h4>"+searchResultsLimit+"+ search results";
+			searchResultsCounter.innerHTML = `<h4>${searchResultsLimit} ${i18next.t("SEARCH_RESULTS")}`;
 
 			var refineMessage = document.createElement("li");
 			refineMessage.id = "limit-message";
-			refineMessage.innerText = "These are the first "+searchResultsLimit+" results. Don't see your building? Try typing more of your address.";
+			refineMessage.innerText = i18next.t("SEARCH_HINT", { searchResultsLimit })
 			searchResultsList.appendChild(refineMessage);
 		} else if (features.length > 1 && features.length <= searchResultsLimit) {
 			// Less results than limit
-			searchResultsCounter.innerHTML = "<h4>"+features.length+" search results";
+			searchResultsCounter.innerHTML = `<h4>${features.length} ${i18next.t("SEARCH_RESULTS")}`;
 		} else if (features.length == 1) {
 			// 1 result
-			searchResultsCounter.innerHTML = "<h4>"+features.length+" search result";
+			searchResultsCounter.innerHTML = `<h4>${features.length} ${i18next.t("SEARCH_RESULT")}`;
 		};
 
 		// Add ListItems
@@ -78,8 +91,8 @@ function renderResults(features) {
 		};
 	} else if (features.length == 0 && searchInput.value != "") {
 		// No results found
-		var title = "No search results";
-		var message = "Sorry, we couldn't find that address. If your building is large, it may have multiple addresses. Try locating it on the map.";
+		var title = i18next.t("NO_SEARCH_RESULTS");
+		var message = i18next.t("NO_SEARCH_RESULTS_MESSAGE");
 		showSearchMessage(title, message);
 	};
 };
@@ -147,10 +160,8 @@ function createListItem(feature) {
 			} catch {
 				// Show error message
 				resetSearchResults();
-				var title = "Database error";
-				// !
-				// var message = "Sorry, we couldn't look up that property's details. Try again in an hour, or <a href='mailto:'mailto:tenantscdsa@gmail.com'>contact us</a>."
-				var message = "Sorry, we couldn't look up that property's details. Try again in an hour, or <a href=''>contact us</a>."
+				var title = i18next.t('ERROR_DB');
+				var message = i18next.t('ERROR_MESSAGE', { supportEmail });
 				showSearchMessage(title, message);
 
 				// Hide spinner

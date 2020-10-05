@@ -10,14 +10,14 @@ function createPDF(title, list) {
 
 	// Set column titles
 	var col = [
-		"Property address",
-		"Community area",
-		"Known units",
-		"Affiliated with",
-		"Properties owned",
-		"Property taxpayer"
+		i18next.t('PROPERTY_ADDRESS'),
+		i18next.t('COMMUNITY_AREA'),
+		i18next.t('KNOWN_UNITS'),
+		i18next.t('AFFILIATED_WITH'),
+		i18next.t('PROPERTIES_OWNED'),
+		i18next.t('PROPERTY_TAXPAYER')
 	];
-
+	
 	// Create empty rows array
 	var rows = [];
 

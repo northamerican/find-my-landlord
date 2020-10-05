@@ -1,4 +1,4 @@
-attachModal(dataInfoLink, "Legal Notice", legalNoticeContent);
+attachModal(legalNoticeLink, i18next.t('LEGAL_NOTICE_TITLE'), i18next.t('LEGAL_NOTICE_CONTENT'));
 
 function searchProperty(id) {
 	var feature;
@@ -166,12 +166,6 @@ function renderSelectedMarker(feature) {
 };
 
 function renderSelectedInfo(feature) {
-	// var address = feature[propertyAddressColumn];
-	// var affiliatedWith = feature[affiliatedWithColumn];
-	// var owned = feature[ownedColumn];
-	// var taxpayer = feature[taxpayerColumn];
-	// var taxpayerMatchCode = feature[taxpayerMatchCodeColumn];
-	// var additionalDetails = feature[additionalDetailsColumn];
 	var address = feature.properties[propertyAddressColumn];
 	var affiliatedWith = feature.properties[affiliatedWithColumn];
 	var owned = feature.properties[ownedColumn];
@@ -306,7 +300,7 @@ function renderSelectedInfo(feature) {
 
 	// Data info
 	var dataInfoLink = document.getElementById("data-info-link");
-	attachModal(dataInfoLink, "How was this data collected?", dataInfoContent);
+	attachModal(dataInfoLink, i18next.t("DATA_INFO_TITLE"), i18next.t("DATA_INFO_CONTENT", { supportEmail }));	
 
 	// Additional details
 	var additionalDetailsLink = document.getElementById("additional-details-link");

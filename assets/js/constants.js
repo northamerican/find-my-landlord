@@ -17,6 +17,8 @@ var searchIndex = "/search-index.json";
 // Map tiles
 var tiles = `${window.location}features/{z}/{x}/{y}.pbf`;
 
+var supportEmail = "";
+
 // Mapbox key
 mapboxgl.accessToken = "pk.eyJ1Ijoibm9ydGhhbWVyaWNhbiIsImEiOiJja2V5bWU4aGkwYXlzMnJxY2tteHY5aHg5In0.icsJb73KMz8GEPuuIbY2YA";
 
@@ -85,4 +87,14 @@ var searchResultsContainer = document.getElementById("search-results-container")
 var searchResultsCounter = document.getElementById("search-results-counter");
 var searchResultsList = document.getElementById("search-results-list");
 var selectedContainer = document.getElementById("selected-container");
-var dataInfoLink = document.getElementById("legal-notice");
+
+var appTitle = document.getElementById("app-title");
+var cityName = document.getElementById("city-name");
+var legalNoticeLink = document.getElementById("legal-notice");
+
+const affiliatedLabel = document.getElementById("affiliated-label");
+const ownedLabel = document.getElementById("owned-label");
+const taxpayerLabel = document.getElementById("taxpayer-label");
+const unitsLabel = document.getElementById("units-label");
+const dataInfoLink = document.getElementById("data-info-link");
+const additionalDetailsLink = document.getElementById("additional-details-link");
