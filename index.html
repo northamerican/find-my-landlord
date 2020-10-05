@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css">
 		
 		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
+		<!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
 
 		<!-- preload essential fonts -->
 		<link rel="preload" href="assets/fonts/ManifoldDSA/ManifoldDSA-Medium.woff" as="font" type="font/woff" crossorigin>
@@ -42,11 +42,11 @@
 
 		<div id="top-container">
 			<div id="title">
-				<h2><a href>Find My Landlord</a></h2>
+				<h2 id="app-title"></h2>
 				<div id="get-help">
-					<p>Montréal</p>
+					<p id="city-name"></p>
 					<!-- <p>Get help: <a href="https://bit.ly/letsorganize">bit.ly/letsorganize</a></p> -->
-					<a href="javascript:;" id="legal-notice"><b>Legal notice</b></a>
+					<a href="javascript:;" id="legal-notice"><b></b></a>
 				</div>
 				<div style="clear: both;"></div>
 			</div>
@@ -67,26 +67,26 @@
 				<div id="selected-container">
 					<table id="info-table">
 						<tr id="affiliated-row">
-							<td id="affiliated-label">Affiliated with:</td>
+							<td id="affiliated-label"></td>
 							<td id="affiliated-value"></td>
 						</tr>
 						<tr id="owned-row">
-							<td id="owned-label">Properties owned:</td>
+							<td id="owned-label"></td>
 							<td id="owned-value"></td>
 						</tr>
 						<tr id="taxpayer-row">
-							<td id="taxpayer-label">Property taxpayer:</td>
+							<td id="taxpayer-label"></td>
 							<td id="taxpayer-value"></td>
 						</tr>
 						<tr id="units-row">
-							<td id="units-label">Units:</td>
+							<td id="units-label"></td>
 							<td id="units-value"></td>
 						</tr>
 					</table>
 					<button id="download-button" class="button-hover"></button>
 					<div id="bottom-links">
-						<p id="data-info-link" class="property-details-link" tabindex="0">How was this data collected?</p>
-						<p id="additional-details-link" class="property-details-link" tabindex="0">Additional property details</p>
+						<p id="data-info-link" class="property-details-link" tabindex="0"></p>
+						<p id="additional-details-link" class="property-details-link" tabindex="0"></p>
 						<div style="clear: both;"></div>
 					</div>
 				</div>
@@ -102,6 +102,11 @@
 
 		<!-- jsPDF -->
 		<script src="assets/js/jspdf.min.js"></script>
+
+		<!-- Flex search -->
+		<script src="assets/js/flexsearch.js"></script>
+		<!-- i18next -->
+		<script src="assets/js/i18next.min.js"></script>
 		
 		<!-- jsPDF-AutoTable -->
 		<script src="assets/js/jspdf.plugin.autotable.js"></script>
@@ -119,8 +124,7 @@
 		<!-- Database -->
 		<script src="assets/js/firebase.js"></script>
 
-		<!-- Search library -->
-		<script src="assets/js/flexsearch.js"></script>
+		<script src="assets/js/i18n.js"></script>
 
 		<!-- Map rendering -->
 		<script src="assets/js/mapbox.js"></script>
@@ -130,7 +134,6 @@
 
 		<!-- Building selection -->
 		<script src="assets/js/matchAddresses.js"></script>
-		<script src="assets/js/modalContent.js"></script>
 		<script src="assets/js/attachModal.js"></script>
 		<script src="assets/js/getProperty.js"></script>
 		<script src="assets/js/createPDF.js"></script>

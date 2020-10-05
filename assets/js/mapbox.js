@@ -19,17 +19,16 @@ var legendUndetermined = document.createElement("div");
 
 // Set content
 legendContainer.id = "legend";
-legendTitle.innerHTML = "Owned by a landlord with...";
-legend50plus.innerHTML = "<span style='background-color: "+color4+"'></span>50+ properties";
-legend10plus.innerHTML = "<span style='background-color: "+color3+"'></span>10+ properties";
-legend3plus.innerHTML = "<span style='background-color: "+color2+"'></span>3+ properties";
-legendLess3.innerHTML = "<span style='background-color: "+color1+"'></span>1-2 properties";
-legendUndetermined.innerHTML = "<span style='background-color: "+white+"'></span># not determined";
+legendTitle.innerHTML = i18next.t("LEGEND_TITLE");
+legend50plus.innerHTML = `<span style="background-color: ${color4}"></span>50+ ${i18next.t("PROPERTIES")}`;
+legend10plus.innerHTML = `<span style="background-color: ${color3}"></span>10+ ${i18next.t("PROPERTIES")}`;
+legend3plus.innerHTML = `<span style="background-color: ${color2}"></span>3+ ${i18next.t("PROPERTIES")}`;
+legendLess3.innerHTML = `<span style="background-color: ${color1}"></span>1-2 ${i18next.t("PROPERTIES")}`;
+legendUndetermined.innerHTML = `<span style="background-color: ${white}"></span># ${i18next.t("NOT_DETERMINED")}`;
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
-	// customAttribution: "<a href='mailto:tenantscdsa@gmail.com'><b>Improve our data</b></a> | <a href='https://github.com/ChicagoDSA/find-my-landlord'>View this project on GitHub</a>"
-	customAttribution: `<a href="mailto:"><b>Improve our data</b></a> | <a href="">GitHub</a>`
+	customAttribution: `<a href="mailto:${supportEmail}"><b>${i18next.t("IMPROVE_OUR_DATA")}</b></a> | <a href="">GitHub</a>`
 });
 map.addControl(attributionControl);
 
@@ -92,7 +91,7 @@ map.on("load", function() {
 			// Disable functionality if IE
 			if (checkIE() == true) {
 				// Show unsupported message
-				searchInput.value = "Internet Explorer isn't supported. Try Chrome!";
+				searchInput.value = i18next.t('BROWSER_WARNING');
 				searchInput.disabled = true;
 				searchInputContainer.style.display = "block";
 			} else {
