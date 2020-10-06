@@ -98,3 +98,4 @@ const taxpayerLabel = document.getElementById("taxpayer-label");
 const unitsLabel = document.getElementById("units-label");
 const dataInfoLink = document.getElementById("data-info-link");
 const additionalDetailsLink = document.getElementById("additional-details-link");
+const switchLangLink = document.getElementById("switch-lang-link");
