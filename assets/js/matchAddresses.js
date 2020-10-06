@@ -1,6 +1,5 @@
 var searchResultsLimit = 50;
 
-
 // i18next ui translations
 appTitle.innerHTML = i18next.t('TITLE')
 cityName.innerHTML = i18next.t('CITY')
@@ -12,6 +11,7 @@ unitsLabel.innerHTML = i18next.t('UNITS_LABEL')
 dataInfoLink.innerHTML = i18next.t('DATA_INFO_TITLE')
 additionalDetailsLink.innerHTML = i18next.t('ADDITIONAL_DETAILS_LABEL')
 
+searchInputContainer.querySelector('input').placeholder = i18next.t('SEARCH_LABEL')
 
 function matchAddresses(e) {
 	var value = e.target.value.trim().toLowerCase();

@@ -15,7 +15,7 @@ var databaseCollectionName = "features";
 // JSON search
 var searchIndex = "/search-index.json";
 // Map tiles
-var tiles = `${window.location}features/{z}/{x}/{y}.pbf`;
+var tiles = `${window.location.origin}/features/{z}/{x}/{y}.pbf`;
 
 var supportEmail = "";
 
