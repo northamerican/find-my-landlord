@@ -15,6 +15,8 @@ i18next.init({
         "UNITS_LABEL": "Units:",
         "ADDITIONAL_DETAILS_LABEL": "Additional property details",
 
+        "SWITCH_LANG_CODE": "fr",
+        "SWITCH_LANG_NAME": "français",
         "SEARCH_LABEL": "Search by address",
 
         "BROWSER_WARNING": "Internet Explorer isn't supported. Try Chrome!",
@@ -73,6 +75,8 @@ i18next.init({
         "UNITS_LABEL": "Unités:",
         "ADDITIONAL_DETAILS_LABEL": "Détails additonels",
 
+        "SWITCH_LANG_CODE": "en",
+        "SWITCH_LANG_NAME": "English",
         "SEARCH_LABEL": "Recherche par adresse",
 
         "BROWSER_WARNING": "Internet Explorer n'est pas supporté. Essayez Chrome!",

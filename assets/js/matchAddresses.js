@@ -10,6 +10,8 @@ taxpayerLabel.innerHTML = i18next.t('TAXPAYER_LABEL')
 unitsLabel.innerHTML = i18next.t('UNITS_LABEL')
 dataInfoLink.innerHTML = i18next.t('DATA_INFO_TITLE')
 additionalDetailsLink.innerHTML = i18next.t('ADDITIONAL_DETAILS_LABEL')
+switchLangLink.innerHTML = i18next.t('SWITCH_LANG_NAME')
+switchLangLink.href = location.origin + '?lng=' + i18next.t('SWITCH_LANG_CODE')
 
 searchInputContainer.querySelector('input').placeholder = i18next.t('SEARCH_LABEL')
 
@@ -24,7 +26,7 @@ function matchAddresses(e) {
 	resetMap();
 
 	if (value != "") {
-		var results = flex.search(value, 51)
+		var results = flex.search(value, searchResultsLimit + 1)
 
 		// Render list
 		renderResults(results)
