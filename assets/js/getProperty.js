@@ -217,11 +217,11 @@ function renderSelectedInfo(feature) {
 		downloadButton.style.display = "block";		
 		// Set button text and style
 		if (affiliatedWith) {
-			downloadButton.innerHTML = "Download all "+affiliatedWith+" data";
+			downloadButton.innerHTML = i18next.t("PDF_DOWNLOAD_ALL", { affiliatedWith });
 		} else if (owned > 1) {
-			downloadButton.innerHTML = "Download data for "+owned+" taxpayer properties";
+			downloadButton.innerHTML = i18next.t("PDF_DOWNLOAD_PROPERTIES", { owned });
 		} else if (owned == 1) {
-			downloadButton.innerHTML = "Download data for "+owned+" taxpayer property";
+			downloadButton.innerHTML = i18next.t("PDF_DOWNLOAD_PROPERTY", { owned });
 		};
 		
 		// Add button listener
@@ -247,7 +247,7 @@ function renderSelectedInfo(feature) {
 					});
 				} catch (err) {
 					console.log("Async function to search related properties failed");
-					downloadButton.innerHTML = "Oops, generating a PDF failed. Try again later.";
+					downloadButton.innerHTML = i18next.t("PDF_FAILED");
 				};	
 			};
 			load();
