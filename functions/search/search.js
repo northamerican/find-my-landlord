@@ -1,6 +1,9 @@
+const { searchIndex } = fs.readFileSync('./search-index.json') 
+
+console.log(searchIndex[0])
+
 const FlexSearch = require('./flexsearch.js')
 
-const searchIndex = require('./search-index.json')
 
 const headers = {
   'Access-Control-Allow-Origin': '*'
