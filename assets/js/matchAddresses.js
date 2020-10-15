@@ -15,8 +15,23 @@ switchLangLink.href = location.origin + '?lng=' + i18next.t('SWITCH_LANG_CODE')
 
 searchInputContainer.querySelector('input').placeholder = i18next.t('SEARCH_LABEL')
 
-function matchAddresses(e) {
+const netlifyFunctionsBaseUrl = '.netlify/functions'
+
+const netlifyFunction = async (methodName, options = {}) => {
+  const response = await fetch(`/${netlifyFunctionsBaseUrl}/${methodName}`, options)
+  return await response.json()
+}
+
+const matchAddresses = async function (e) {
+	// Load search keys
 	var value = e.target.value.trim().toLowerCase();
+
+	spinner.style.display = "block";
+	const { results } = await netlifyFunction('search', {
+		body: JSON.stringify({query: value}),
+		method: 'POST'
+	})
+	spinner.style.display = "none";
 
 	// Show "x"
 	renderClearButton(value);
@@ -26,8 +41,6 @@ function matchAddresses(e) {
 	resetMap();
 
 	if (value != "") {
-		var results = flex.search(value, searchResultsLimit + 1)
-
 		// Render list
 		renderResults(results)
 	};

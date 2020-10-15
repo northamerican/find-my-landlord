@@ -40,6 +40,8 @@ i18next.init({
         "NOT_DETERMINED": "not determined",
         "IMPROVE_OUR_DATA": "Improve our data",
 
+        "VISIBLE": "Show",
+
         "SEARCH_RESULT": "search result",
         "SEARCH_RESULTS": "search results",
         "NO_SEARCH_RESULTS": "No search results",
@@ -100,7 +102,9 @@ i18next.init({
         "NOT_DETERMINED": "non déterminé",
         "IMPROVE_OUR_DATA": "Améliorez nos données",
 
-        "SEARCH_RESULT": "résultat de la recherche",
+        "VISIBLE": "Afficher",
+
+        "SEARCH_RESULT": "résultat de recherche",
         "SEARCH_RESULTS": "résultats de recherche",
         "NO_SEARCH_RESULTS": "Aucun résultat trouvé",
         "NO_SEARCH_RESULTS_MESSAGE": "Désolé, nous n'avons pas trouvé cette adresse. Pour les grands immeubles, il peut avoir plusieurs adresses. Essayez de le localiser sur la carte.",

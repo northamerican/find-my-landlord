@@ -3,6 +3,7 @@ var map = new mapboxgl.Map({
 		container: "map",
 		style: 'mapbox://styles/northamerican/ckf7suzpd0gx219mhjwhbqb0s',
 		center: [-73.566520, 45.500100], // Gare Centrale
+		
 		bearing: -57, // -57 degrees is north
 		zoom: 12,
 		attributionControl: false
@@ -23,7 +24,8 @@ legendTitle.innerHTML = i18next.t("LEGEND_TITLE");
 legend50plus.innerHTML = `<span style="background-color: ${color4}"></span>50+ ${i18next.t("PROPERTIES")}`;
 legend10plus.innerHTML = `<span style="background-color: ${color3}"></span>10+ ${i18next.t("PROPERTIES")}`;
 legend3plus.innerHTML = `<span style="background-color: ${color2}"></span>3+ ${i18next.t("PROPERTIES")}`;
-legendLess3.innerHTML = `<span style="background-color: ${color1}"></span>1-2 ${i18next.t("PROPERTIES")}`;
+legendLess3.innerHTML = `<label><span style="background-color: ${color1}"></span>1-2 ${i18next.t("PROPERTIES")}
+	<input id="showPropertiesLess3" type="checkbox">${i18next.t("VISIBLE")}</label>`;
 legendUndetermined.innerHTML = `<span style="background-color: ${white}"></span># ${i18next.t("NOT_DETERMINED")}`;
 
 // Add attribution control
@@ -43,74 +45,76 @@ legendContainer.appendChild(legend50plus);
 legendContainer.appendChild(legend10plus);
 legendContainer.appendChild(legend3plus);
 legendContainer.appendChild(legendLess3);
-legendContainer.appendChild(legendUndetermined);
+// legendContainer.appendChild(legendUndetermined);
+
+const $showPropertiesLess3 = document.getElementById('showPropertiesLess3')
+$showPropertiesLess3.addEventListener("change", showPropertiesProcessFilter);
+
+
+// View Filtering
+function getViewFilters () {
+	return showPropertiesLess3.checked ? [] : [['>', ownedColumn, 2]]
+}
+
+function showPropertiesProcessFilter () {
+	map.setFilter("allProperties", ['all',
+		...getViewFilters()
+	]);
+}
 
 // Add navigation
 var navigationControl = new mapboxgl.NavigationControl();
 map.addControl(navigationControl, "top-right");
 
-var flex = new FlexSearch({
-	doc: {
-		id: propertyIndexColumn,
-		field: ["search"]
-	},
-});
 
 map.on("load", function() {
-	// Load search keys
-	var request = new XMLHttpRequest();
-	request.open("GET", searchIndex, true);
-	request.onload = function() {
-		if (this.status >= 200 && this.status < 400) {
-			const { searchIndex } = JSON.parse(this.response);
+	// Set source data
+	map.addSource("propertyData", {
+		type: "vector",
+		maxzoom: 14, // Allows overzoom
+		tiles: [tiles],
+		promoteId: propertyIndexColumn
+	});
 
-			flex.add(searchIndex)
+	map.addLayer({
+		"id": "allProperties",
+		"type": "circle",
+		"source": "propertyData",
+		"source-layer": "features",
+		"paint": {
+			"circle-radius": defaultRadius,
+			"circle-color": defaultColors,
+			"circle-opacity": defaultOpacity,
+			"circle-stroke-width": 1,
+			"circle-stroke-color": "rgba(0, 0, 0, .25)",
+		},
+		'filter': ['all',
+			...getViewFilters()
+		]
+	});
 
-			// Set source data
-			map.addSource("propertyData", {
-				type: "vector",
-				maxzoom: 14, // Allows overzoom
-				tiles: [tiles],
-				promoteId: propertyIndexColumn
-			});
+	// Disable functionality if IE
+	if (checkIE() == true) {
+		// Show unsupported message
+		searchInput.value = i18next.t('BROWSER_WARNING');
+		searchInput.disabled = true;
+		searchInputContainer.style.display = "block";
+	} else {
+		// Remove persisted value
+		searchInput.value = "";
+		// Show search
+		searchInputContainer.style.display = "block";
 
-			map.addLayer({
-				"id": "allProperties",
-				"type": "circle",
-				"source": "propertyData",
-				"source-layer": "features",
-				"paint": {
-					"circle-radius": defaultRadius,
-					"circle-color": defaultColors,
-					"circle-opacity": defaultOpacity,
-					"circle-stroke-width": 1,
-					"circle-stroke-color": "rgba(0, 0, 0, .25)",
-				}
-			});
-
-			// Disable functionality if IE
-			if (checkIE() == true) {
-				// Show unsupported message
-				searchInput.value = i18next.t('BROWSER_WARNING');
-				searchInput.disabled = true;
-				searchInputContainer.style.display = "block";
-			} else {
-				// Remove persisted value
-				searchInput.value = "";
-				// Show search
-				searchInputContainer.style.display = "block";
-				// Add input listeners
-				searchInput.addEventListener("keypress", matchAddresses);
-				searchInput.addEventListener("input", matchAddresses); // Registers backspace
-				// Allow hover and click
-				setHoverState("propertyData", "features", "allProperties");
-			};
-
-			// Hide spinner
-			spinner.style.display = "none";
-		};
+		const debounceMatchAddresses = debounce(matchAddresses, 350)
+		// Add input listeners
+		searchInput.addEventListener("keypress", debounceMatchAddresses);
+		searchInput.addEventListener("input", debounceMatchAddresses); // Registers backspace
+		// Allow hover and click
+		setHoverState("propertyData", "features", "allProperties");
 	};
-	request.send();
+
+	// Hide spinner
+	spinner.style.display = "none";
 });
 
 map.on("error", function(e) {
@@ -163,7 +167,10 @@ function setHoverState (sourceData, sourceLayer, hoverLayer) {
 		};
 
 		if (buildingAtPoint) {
-			if (selectedContainer.style.display !== "block") {
+			if (
+				selectedContainer.style.display !== "block" &&
+				spinner.style.display !== "block"
+			) {
 				searchInput.value = buildingAtPoint.properties[propertyAddressColumn];
 			}
 			map.getCanvas().style.cursor = "pointer";
@@ -251,7 +258,10 @@ function setHoverState (sourceData, sourceLayer, hoverLayer) {
 	});
 
 	map.on("mouseleave", hoverLayer, function() {
-		if (selectedContainer.style.display !== "block") {
+		if (
+			selectedContainer.style.display !== "block" &&
+			spinner.style.display !== "block"
+		) {
 			searchInput.value = ''
 		}
 		// Hover to false

@@ -13,7 +13,7 @@ var relativeSizeColumn = "Nombre de logements"; // "Relative Size";
 // Database reference
 var databaseCollectionName = "features";
 // JSON search
-var searchIndex = "/search-index.json";
+var searchIndexUrl = "/search-index.json";
 // Map tiles
 var tiles = `${window.location.origin}/features/{z}/{x}/{y}.pbf`;
 
@@ -87,6 +87,8 @@ var searchResultsContainer = document.getElementById("search-results-container")
 var searchResultsCounter = document.getElementById("search-results-counter");
 var searchResultsList = document.getElementById("search-results-list");
 var selectedContainer = document.getElementById("selected-container");
+
+var ownedValue = document.getElementById("owned-value");
 
 var appTitle = document.getElementById("app-title");
 var cityName = document.getElementById("city-name");
