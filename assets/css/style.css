@@ -488,6 +488,10 @@ h5 {
 	margin: 0;
 }
 
+#modal-text :first-child {
+	margin-top: 0;
+}
+
 #modal-text p:last-of-type {
 	margin-bottom: 0;
 }
@@ -509,6 +513,16 @@ h5 {
 	border: 1px solid #000; /* Fallback */
 	border: 1px solid rgba(0, 0, 0, .5);
 	border-radius: 50%;
+}
+
+#legend label {
+	cursor: pointer;
+}
+
+#legend label #showPropertiesLess3 {
+	cursor: pointer;
+	position: relative;
+	bottom: -2px;
 }
 
 /* Responsive */

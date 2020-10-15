@@ -6,7 +6,7 @@ function centerMap (coordinates) {
 		map.flyTo({
 			center: coordinates,
 			offset: [0, offset],
-			bearing: map.getBearing(),
+			// bearing: map.getBearing(),
 			zoom: setZoom(map.getZoom()),
 			essential: true
 		});

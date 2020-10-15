@@ -95,8 +95,11 @@ function renderSelectedMap(feature) {
 	// Show container
 	searchResultsContainer.style.display = "block";
 	// Hide all properties with same owner
-	map.setFilter("allProperties", ["!=", taxpayerMatchCodeColumn, taxpayerMatchCode]);
-	map.setPaintProperty("allProperties", "circle-opacity", .15);
+	map.setFilter("allProperties", ['all',
+		["!=", taxpayerMatchCodeColumn, taxpayerMatchCode], 
+		...getViewFilters()
+	]);
+	map.setPaintProperty("allProperties", "circle-opacity", .35);
 
 	if (owned) {
 		// Query database
@@ -210,7 +213,6 @@ function renderSelectedInfo(feature) {
 		// Show row
 		ownedRow.style.display = "block";
 		// Set value
-		var ownedValue = document.getElementById("owned-value");
 		ownedValue.innerText = owned;
 
 		// Also show download button
@@ -316,3 +318,5 @@ function renderSelectedInfo(feature) {
 		additionalDetailsLink.style.display = "none";
 	};
 };
+
+ownedValue.addEventListener("click", fitBounds)
