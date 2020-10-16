@@ -14,6 +14,7 @@ exports.handler = async ({ body }) => {
   const { query } = jsonBody
 
   var flex = new FlexSearch({
+    profile: "fast",
     doc: {
       id: propertyIndexColumn,
       field: ["search"]
