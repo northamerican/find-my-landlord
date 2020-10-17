@@ -1,14 +1,14 @@
 // Column headers
 var propertyAddressColumn = "Adresse";
 var communityAreaColumn = "Arrondissement";
-var propertyIndexColumn = "Numéro de lot"; // Property Index Number
+var propertyIndexColumn = "hash";
 var taxpayerColumn = "Nom";
-var taxpayerMatchCodeColumn = "Affiliated With"; //"Taxpayer Match Code";
+var taxpayerMatchCodeColumn = "Affiliated With";
 var ownedColumn = "Properties Held by Taxpayer Match Code";
 var unitColumn = "Nombre de logements";
 var affiliatedWithColumn = "Affiliated With";
 var additionalDetailsColumn = "Additional Details";
-var relativeSizeColumn = "Nombre de logements"; // "Relative Size";
+var relativeSizeColumn = "Nombre de logements";
 
 // Database reference
 var databaseCollectionName = "features";
