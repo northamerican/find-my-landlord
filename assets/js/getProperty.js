@@ -110,7 +110,7 @@ function renderSelectedMap(feature) {
 
 				var properties = await searchRelatedProperties(taxpayerMatchCode);
 				// Show properties on map
-				addLayer("relatedProperties", properties, defaultRadius, dsaYellow, .75);
+				addLayer("relatedProperties", properties, defaultRadius, dsaYellow, 0.85);
 				// And hide current property
 				map.setFilter("relatedProperties", ["!=", propertyIndexColumn, propertyIndex]);
 
