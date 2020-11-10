@@ -1,7 +1,5 @@
 const fs = require('fs')
-var hrSearchIndex = process.hrtime()
 const { searchIndex } = JSON.parse(fs.readFileSync(require.resolve('./assets/search-index.json')))
-var hrSearchIndexTime = process.hrtime(hrSearchIndex)
 
 const FlexSearch = require('./assets/flexsearch.js')
 
