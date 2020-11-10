@@ -269,7 +269,7 @@ function renderSelectedInfo(feature) {
 		taxpayerRow.style.display = "block";
 		// Set value
 		var taxpayerValue = document.getElementById("taxpayer-value");
-		taxpayerValue.innerText = taxpayer;
+		taxpayerValue.innerText = Array.isArray(taxpayer) ? taxpayer.join(' / ') : taxpayer;
 	} else {
 		// Hide row
 		ownedRow.style.display = "none";
