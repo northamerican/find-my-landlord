@@ -89,6 +89,7 @@ var searchResultsList = document.getElementById("search-results-list");
 var selectedContainer = document.getElementById("selected-container");
 
 var ownedValue = document.getElementById("owned-value");
+var viewOnMap = document.getElementById("view-on-map");
 
 var appTitle = document.getElementById("app-title");
 var cityName = document.getElementById("city-name");

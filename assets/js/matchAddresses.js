@@ -6,6 +6,7 @@ cityName.innerHTML = i18next.t('CITY')
 legalNoticeLink.innerHTML = `<b>${i18next.t('LEGAL_NOTICE_TITLE')}</b>`
 affiliatedLabel.innerHTML = i18next.t('AFFILIATED_LABEL')
 ownedLabel.innerHTML = i18next.t('OWNED_LABEL')
+viewOnMap.innerHTML = i18next.t('VIEW_ON_MAP')
 taxpayerLabel.innerHTML = i18next.t('TAXPAYER_LABEL')
 unitsLabel.innerHTML = i18next.t('UNITS_LABEL')
 dataInfoLink.innerHTML = i18next.t('DATA_INFO_TITLE')

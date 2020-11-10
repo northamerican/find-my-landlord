@@ -406,9 +406,6 @@ h5 {
 }
 
 #selected-container button {
-	width: 100%;
-	padding: .3125rem .625rem;
-	font-weight: bold;
 	color: #000;
 	border: none;
 	background-color: #fad434;
@@ -419,6 +416,16 @@ h5 {
 #selected-container button:hover {
 	text-decoration: underline;
 	box-shadow: 0 .3125rem .625rem rgba(0 , 0, 0, .25);
+}
+
+#selected-container #download-button {
+	font-weight: bold;
+	width: 100%;
+	padding: .3125rem .625rem;
+}
+
+#selected-container #view-on-map {
+	margin-left: 1rem;
 }
 
 #bottom-links {
