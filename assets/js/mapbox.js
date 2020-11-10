@@ -103,12 +103,18 @@ map.on("load", function() {
 		// Remove persisted value
 		searchInput.value = "";
 		// Show search
-		searchInputContainer.style.display = "block";
+		searchInputContainer.style.display = "flex";
 
-		const debounceMatchAddresses = debounce(matchAddresses, 350)
 		// Add input listeners
-		searchInput.addEventListener("keypress", debounceMatchAddresses);
-		searchInput.addEventListener("input", debounceMatchAddresses); // Registers backspace
+		searchInput.addEventListener("keypress", e => {
+			if (e.key === 'Enter') {
+				matchAddresses(searchInput.value)
+			}
+		});
+		searchButton.addEventListener("click", () => {
+			matchAddresses(searchInput.value)
+		});
+
 		// Allow hover and click
 		setHoverState("propertyData", "features", "allProperties");
 	};
