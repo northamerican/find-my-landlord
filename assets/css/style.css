@@ -221,10 +221,14 @@ h5 {
 #clear,
 #modal-close {
 	position: absolute;
-	right: 90px;
+	right: .3125rem;
 	width: 1.875rem;
 	height: 1.875rem;
 	cursor: pointer;
+}
+
+#clear {
+	right: 90px;
 }
 
 #clear img,
@@ -416,6 +420,7 @@ h5 {
 
 #top-container #search-button {
 	width: 100px;
+	margin: 0;
 }
 
 #selected-container #download-button {
