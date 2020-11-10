@@ -123,7 +123,7 @@ function renderSelectedMap(feature) {
 					});
 					// Owner has more than 1 property
 					// Fit them in viewport
-					fitBounds();
+					// fitBounds();
 				} else {
 					// Owner has 1 property
 					centerMap(feature.geometry.coordinates);
@@ -319,4 +319,5 @@ function renderSelectedInfo(feature) {
 	};
 };
 
-ownedValue.addEventListener("click", fitBounds)
+// Click to view 
+viewOnMap.addEventListener("click", fitBounds);

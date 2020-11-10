@@ -11,6 +11,7 @@ i18next.init({
 
         "AFFILIATED_LABEL": "Affiliated with:",
         "OWNED_LABEL": "Properties owned:",
+        "VIEW_ON_MAP": "View on map ↘",
         "TAXPAYER_LABEL": "Property taxpayer:",
         "UNITS_LABEL": "Units:",
         "ADDITIONAL_DETAILS_LABEL": "Additional property details",
@@ -73,6 +74,7 @@ i18next.init({
 
         "AFFILIATED_LABEL": "Affilié avec:",
         "OWNED_LABEL": "Bâtiments possédés:",
+        "VIEW_ON_MAP": "Afficher sur la carte ↘",
         "TAXPAYER_LABEL": "Nom du contribuable:",
         "UNITS_LABEL": "Unités:",
         "ADDITIONAL_DETAILS_LABEL": "Détails additonels",
