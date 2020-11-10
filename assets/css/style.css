@@ -33,6 +33,12 @@
 	font-style: normal;
 }
 
+:root {
+	/* Disable zoom on mobile */
+	touch-action: pan-x pan-y;
+  height: 100% 
+}
+
 /* Disable font boosting on mobile browsers */
 
 body * {
