@@ -14,6 +14,9 @@ exports.handler = async ({ body }) => {
   const jsonBody = JSON.parse(body)
   const { query } = jsonBody
 
+  console.log({ jsonBody, query })
+  console.log(searchIndex.length)
+
   const flex = new FlexSearch({
     encode: "simple",
     profile: "fast",
@@ -29,6 +32,8 @@ exports.handler = async ({ body }) => {
   const response = {
     results
   }
+
+  console.log({ response, results })
 
   return {
     statusCode: 200,
