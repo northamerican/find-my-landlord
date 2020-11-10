@@ -179,7 +179,7 @@ h5 {
 }
 
 #top-container,
-#selected-container button,
+#top-container button,
 #modal-content,
 #legend {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
@@ -221,7 +221,7 @@ h5 {
 #clear,
 #modal-close {
 	position: absolute;
-	right: .3125rem;
+	right: 90px;
 	width: 1.875rem;
 	height: 1.875rem;
 	cursor: pointer;
@@ -306,15 +306,11 @@ h5 {
 /* Search input */
 
 #search-input-container {
-	padding: 1.25rem;
+	/* padding: 1.25rem; */
 	z-index: 3;
 }
 
 #search-input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
 	height: 100%;
 	font-weight: bold;
 	border: 0;
@@ -405,7 +401,7 @@ h5 {
 	width: 10rem;
 }
 
-#selected-container button {
+#top-container button {
 	color: #000;
 	border: none;
 	background-color: #fad434;
@@ -413,9 +409,13 @@ h5 {
 	cursor: pointer;
 }
 
-#selected-container button:hover {
+#top-container button:hover {
 	text-decoration: underline;
 	box-shadow: 0 .3125rem .625rem rgba(0 , 0, 0, .25);
+}
+
+#top-container #search-button {
+	width: 100px;
 }
 
 #selected-container #download-button {

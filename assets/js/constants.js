@@ -82,6 +82,7 @@ var marker = null;
 var spinner = document.getElementById("spinner");
 var searchInputContainer = document.getElementById("search-input-container");
 var searchInput = document.getElementById("search-input");
+var searchButton = document.getElementById("search-button");
 var clearButton = document.getElementById("clear");
 var searchResultsContainer = document.getElementById("search-results-container");
 var searchResultsCounter = document.getElementById("search-results-counter");

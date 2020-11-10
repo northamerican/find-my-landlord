@@ -16,8 +16,8 @@ exports.handler = async ({ body }) => {
   const jsonBody = JSON.parse(body)
   const { query } = jsonBody
 
-  var hrFlexInitAdd = process.hrtime()
-  var flex = new FlexSearch({
+  const flex = new FlexSearch({
+    encode: "simple",
     profile: "fast",
     doc: {
       id: propertyIndexColumn,
@@ -26,19 +26,10 @@ exports.handler = async ({ body }) => {
   })
 
   flex.add(searchIndex)
-  var hrFlexInitAddTime = process.hrtime(hrFlexInitAdd)
 
-  var hrFlexSearch = process.hrtime()  
-  var results = flex.search(query, searchResultsLimit + 1)
-  var hrFlexSearchTime = process.hrtime(hrFlexSearch)
-
+  const results = flex.search(query, searchResultsLimit + 1)
   const response = {
-    results,
-    timing: {
-      hrSearchIndexTime: hrSearchIndexTime[1] / 1000000,
-      hrFlexInitAddTime: hrFlexInitAddTime[1] / 1000000,
-      hrFlexSearchTime: hrFlexSearchTime[1] / 1000000
-    }
+    results
   }
 
   return {

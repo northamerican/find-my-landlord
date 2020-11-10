@@ -15,6 +15,7 @@ switchLangLink.innerHTML = i18next.t('SWITCH_LANG_NAME')
 switchLangLink.href = location.origin + '?lng=' + i18next.t('SWITCH_LANG_CODE')
 
 searchInputContainer.querySelector('input').placeholder = i18next.t('SEARCH_LABEL')
+searchButton.innerHTML = i18next.t('SEARCH_BUTTON')
 
 const netlifyFunctionsBaseUrl = '.netlify/functions'
 
@@ -23,9 +24,9 @@ const netlifyFunction = async (methodName, options = {}) => {
   return await response.json()
 }
 
-const matchAddresses = async function (e) {
+const matchAddresses = async function (query) {
 	// Load search keys
-	var value = e.target.value.trim().toLowerCase();
+	var value = query.trim().toLowerCase();
 
 	spinner.style.display = "block";
 	const { results } = await netlifyFunction('search', {
