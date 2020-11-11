@@ -17,7 +17,8 @@ var searchIndexUrl = "/search-index.json";
 // Map tiles
 var tiles = `${window.location.origin}/features/{z}/{x}/{y}.pbf`;
 
-var supportEmail = "";
+var githubRepoUrl = "https://github.com/northamerican/find-my-landlord"
+var supportEmail = "find-my-landlord-mtl@protonmail.com";
 
 // Mapbox key
 mapboxgl.accessToken = "pk.eyJ1Ijoibm9ydGhhbWVyaWNhbiIsImEiOiJja2V5bWU4aGkwYXlzMnJxY2tteHY5aHg5In0.icsJb73KMz8GEPuuIbY2YA";
