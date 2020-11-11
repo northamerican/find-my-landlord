@@ -3,9 +3,9 @@
 
 // const FlexSearch = require('./assets/flexsearch.js')
 
-// const headers = {
-//   'Access-Control-Allow-Origin': '*'
-// }
+const headers = {
+  'Access-Control-Allow-Origin': '*'
+}
 
 // const searchResultsLimit = 50
 // const propertyIndexColumn = 'hash'
