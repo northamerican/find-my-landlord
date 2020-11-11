@@ -24,7 +24,8 @@ i18next.init({
         "BROWSER_WARNING": "Internet Explorer isn't supported. Try Chrome!",
 
         "LEGAL_NOTICE_TITLE": "Legal notice",
-        "LEGAL_NOTICE_CONTENT": `<p>This tool provides publicly accessible information for non-commercial and educational purposes only.</p>
+        "LEGAL_NOTICE_CONTENT": `<h5>Last content update: September 2020</h5>
+        <p>This tool provides publicly accessible information for non-commercial and educational purposes only.</p>
         <p>It is for use as a reference and its authors do not guarantee the information provided is current or accurate.</p>
         <p>The companies, names and trademarks are the property of their respective owners. The authors of this tool do not claim affiliation or ownership with any persons or companies displayed.</p>
         `,
@@ -88,7 +89,8 @@ i18next.init({
         "BROWSER_WARNING": "Internet Explorer n'est pas supporté. Essayez Chrome!",
 
         "LEGAL_NOTICE_TITLE": "Mentions légales",
-        "LEGAL_NOTICE_CONTENT": `<p>Cet outil fournit des informations accessibles au public à des fins non commerciales et éducatives uniquement.</p>
+        "LEGAL_NOTICE_CONTENT": `<h5>Mise à jour des données: septembre 2020</h5>
+        <p>Cet outil fournit des informations accessibles au public à des fins non commerciales et éducatives uniquement.</p>
         <p>Il sert comme point de référence et ses auteurs ne garantissent pas que les informations fournies sont actuelles ou exactes.</p>
         <p>Les entreprises, noms et marques commerciales appartiennent à leurs propriétaires respectifs. Les auteurs de cet outil ne revendiquent aucune affiliation avec les personnes ou entreprises affichées.</p>
         `,

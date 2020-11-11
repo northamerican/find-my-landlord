@@ -30,7 +30,7 @@ legendUndetermined.innerHTML = `<span style="background-color: ${white}"></span>
 
 // Add attribution control
 var attributionControl = new mapboxgl.AttributionControl({
-	customAttribution: `<a href="mailto:${supportEmail}"><b>${i18next.t("IMPROVE_OUR_DATA")}</b></a> | <a href="">GitHub</a>`
+	customAttribution: `<a href="mailto:${supportEmail}"><b>${i18next.t("IMPROVE_OUR_DATA")}</b></a> | <a href="${githubRepoUrl}" target="_blank">GitHub</a>`
 });
 map.addControl(attributionControl);
 
