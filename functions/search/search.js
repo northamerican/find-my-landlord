@@ -38,6 +38,6 @@ exports.handler = async ({ body }) => {
   return {
     statusCode: 200,
     body: JSON.stringify({ results: [] }),
-    headers: JSON.stringify(headers)
+    headers
   }
 }
