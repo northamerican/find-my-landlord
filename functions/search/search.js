@@ -1,7 +1,7 @@
 const fs = require('fs');
 // const { searchIndex } = JSON.parse(fs.readFileSync(require.resolve('./assets/search-index.json')))
 
-const ff = fs.readFileSync(require.resolve('./assets/search-index.json'))
+const ff = fs.readFileSync(require.resolve('./assets/search-index.json'), 'utf8')
 
 // const FlexSearch = require('./assets/flexsearch.js')
 
@@ -20,7 +20,7 @@ exports.handler = async ({ body }) => {
   // console.log(searchIndex.length)
 
   console.log('ff')
-  console.log(ff)
+  console.log(JSON.parse(ff))
 
   // const flex = new FlexSearch({
   //   encode: "simple",
