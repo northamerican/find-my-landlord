@@ -5,7 +5,7 @@ https://find-my-landlord-a490d1.netlify.app/
 # Find My Landlord
 This tool allows you to:
 - Look up select properties in Montreal
-- View the rental's owner, browse related properties, and download these as a PDF
+- View the property's owner, browse related properties, and download these as a PDF
 - Explore the density of mega-landlord properties across neighborhoods
 
 ## Build
