@@ -20,7 +20,7 @@ exports.handler = async ({ body }) => {
   // console.log(searchIndex.length)
 
   console.log('ff')
-  console.log(JSON.parse(ff))
+  console.log(ff.toString())
 
   // const flex = new FlexSearch({
   //   encode: "simple",
