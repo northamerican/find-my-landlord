@@ -28,5 +28,3 @@ Put the `property-information-for-firestore.json` file in the root of the projec
 
 ## Credits
 [Lucien Liz-Lepiorz](https://github.com/lucienlizlepiorz) handled mapping and built the original concept and site.
-
-[Mapbox](https://www.mapbox.com/) powers the map's tileset, [Google Cloud Firestore](https://firebase.google.com/docs/firestore) hosts our database, and [jsPDF](https://github.com/MrRio/jsPDF) generates PDFs.
