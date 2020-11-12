@@ -112,7 +112,9 @@ map.on("load", function() {
 			}
 		});
 		searchButton.addEventListener("click", () => {
-			matchAddresses(searchInput.value)
+			if (searchInput.value) {
+				matchAddresses(searchInput.value)
+			}
 		});
 
 		// Allow hover and click
