@@ -7,7 +7,7 @@ i18next.init({
     en: {
       translation: {
         "TITLE": "Find My Landlord",
-        "CITY": "Montreal",
+        "GET_HELP": `<a href="https://rclalq.qc.ca/comites-logement/" target="_blank">Get housing help</a> • <a href="https://www.frapru.qc.ca/a-propos/" target="_blank">Organize</a>`,
 
         "AFFILIATED_LABEL": "Affiliated with:",
         "OWNED_LABEL": "Properties owned:",
@@ -72,11 +72,12 @@ i18next.init({
     fr: {
       translation: {
         "TITLE": "<i>Find My Landlord</i>",
-        "CITY": "Montréal",
+        "GET_HELP": `<a href="https://rclalq.qc.ca/comites-logement/" target="_blank">Assistance logement</a> • <a href="https://www.frapru.qc.ca/a-propos/" target="_blank">Mobiliser</a>`,
+
 
         "AFFILIATED_LABEL": "Affilié avec:",
         "OWNED_LABEL": "Bâtiments possédés:",
-        "VIEW_ON_MAP": "Afficher sur la carte ↘",
+        "VIEW_ON_MAP": "Afficher ↘",
         "TAXPAYER_LABEL": "Nom du contribuable:",
         "UNITS_LABEL": "Unités:",
         "ADDITIONAL_DETAILS_LABEL": "Détails additonels",

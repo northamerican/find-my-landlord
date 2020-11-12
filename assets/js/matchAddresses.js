@@ -2,7 +2,7 @@ var searchResultsLimit = 50;
 
 // i18next ui translations
 appTitle.innerHTML = i18next.t('TITLE')
-cityName.innerHTML = i18next.t('CITY')
+getHelpLinks.innerHTML = i18next.t('GET_HELP')
 legalNoticeLink.innerHTML = `<b>${i18next.t('LEGAL_NOTICE_TITLE')}</b>`
 affiliatedLabel.innerHTML = i18next.t('AFFILIATED_LABEL')
 ownedLabel.innerHTML = i18next.t('OWNED_LABEL')
