@@ -9,9 +9,10 @@ This tool allows you to:
 - Explore the density of mega-landlord properties across neighborhoods
 
 ## Build
-- Web app hosted on Netlify.
-- Database hosted on Google firebase.
-- Mapping hosted on Mapbox.
+- Web app hosted on [Netlify](https://www.netlify.com/).
+- Domain registered on [freedns](https://freedns.afraid.org/subdomain/).
+- Database hosted on [Google firebase](https://firebase.google.com/).
+- Mapping hosted on [Mapbox](https://www.mapbox.com/).
 
 **Assets are built using tools in a private repo**
 
