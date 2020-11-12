@@ -25,9 +25,6 @@ Generate the `search-index.json` file and put it in `functions/search/assets/`.
 ### Updating the property information db
 Put the `property-information-for-firestore.json` file in the root of the project and run `utils/Firestore-uploader/import.js`.
 
-### To build the functions directory
-Run `netlify functions:build --src ./functions` and commit the generate netlify function zip file(s).
-
 
 ## Credits
 [Lucien Liz-Lepiorz](https://github.com/lucienlizlepiorz) handled mapping and built the site. [Ivy Abid](https://github.com/ivyabid) directed the project and merged assessor data with other public datasets.
