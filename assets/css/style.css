@@ -234,7 +234,7 @@ h5 {
 }
 
 #clear {
-	right: 90px;
+	right: 110px;
 }
 
 #clear img,
@@ -282,7 +282,7 @@ h5 {
 /* Site title */
 
 #title {
-	display: table;
+	display: flex;
 	position: relative;
 	padding: 10px;
 	width: 100%;
@@ -296,18 +296,12 @@ h5 {
 }
 
 #title h2,
-#get-help {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-#title h2,
 #get-help p {
 	margin: 0;
 }
 
 #get-help {
-	float: right;
+	margin-left: auto;
 	width: 12rem;
 	font-size: .75rem;
 	text-align: right;
@@ -426,7 +420,7 @@ h5 {
 }
 
 #top-container #search-button {
-	width: 100px;
+	width: 130px;
 	margin: 0;
 }
 
@@ -567,15 +561,7 @@ h5 {
 }
 
 @media screen and (max-width: 22.5rem) {
-	#title h2,
-	#get-help p {
-		display: block;
-	}
-
-	#get-help {
-		float: left;
-		width: auto;
-		margin-top: .5rem;
-		text-align: left;
+	#title h2 {
+		font-size: 1rem;
 	}
 }
