@@ -52,6 +52,9 @@ var defaultColors = [
 	white
 ];
 
+// Read limit on firestore requests
+var firestoreReadLimit = 200;
+
 // Scale radius based on zoom, relative unit size, hover
 var defaultRadius = [
 	"interpolate",
