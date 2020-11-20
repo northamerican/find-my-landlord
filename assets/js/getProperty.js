@@ -7,6 +7,7 @@ function searchProperty(id) {
 		// Look up ID in database
 		var query = featuresRef
 			.where("properties."+propertyIndexColumn, "==", String(id))
+			.limit(1)
 			.get()
 			.then(function(querySnapshot) {				
 				if (querySnapshot.docs.length == 0) {
@@ -43,8 +44,9 @@ function searchRelatedProperties(taxpayerMatchCode) {
 		} else {
 			// Get array from database
 			// Get properties with same match code
-			var query = featuresRef
+			featuresRef
 				.where("properties."+taxpayerMatchCodeColumn, "==", taxpayerMatchCode)
+				.limit(firestoreReadLimit)
 				.get()
 				.then(function(querySnapshot) {
 					if (querySnapshot.docs.length == 0) {
