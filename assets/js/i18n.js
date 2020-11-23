@@ -7,7 +7,7 @@ i18next.init({
     en: {
       translation: {
         "TITLE": "Find My Landlord",
-        "GET_HELP": `<a href="https://rclalq.qc.ca/comites-logement/" target="_blank">Get housing help</a> • <a href="https://www.frapru.qc.ca/a-propos/" target="_blank">Organize</a>`,
+        "GET_HELP": `<a href="https://rclalq.qc.ca/comites-logement/" target="_blank">Get housing help</a> • <a href="https://www.frapru.qc.ca/a-propos/" target="_blank">Resources</a>`,
 
         "AFFILIATED_LABEL": "Affiliated with:",
         "OWNED_LABEL": "Properties owned:",
@@ -72,7 +72,7 @@ i18next.init({
     fr: {
       translation: {
         "TITLE": "<i>Find My Landlord</i>",
-        "GET_HELP": `<a href="https://rclalq.qc.ca/comites-logement/" target="_blank">Assistance logement</a> • <a href="https://www.frapru.qc.ca/a-propos/" target="_blank">Mobiliser</a>`,
+        "GET_HELP": `<a href="https://rclalq.qc.ca/comites-logement/" target="_blank">Assistance logement</a> • <a href="https://www.frapru.qc.ca/a-propos/" target="_blank">Ressources</a>`,
 
 
         "AFFILIATED_LABEL": "Affilié avec:",
