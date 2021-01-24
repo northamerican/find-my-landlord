@@ -27,12 +27,12 @@ exports.handler = async ({ body }) => {
 
   const results = flex.search(query, searchResultsLimit + 1)
   const response = {
-    results
+    // results
   }
 
   return {
     statusCode: 200,
-    body: JSON.stringify(response),
+    body: JSON.stringify({response}),
     headers
   }
 }
