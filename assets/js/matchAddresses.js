@@ -28,6 +28,10 @@ const matchAddresses = async function (query) {
 	// Load search keys
 	var value = query.trim().toLowerCase();
 
+	firebase.analytics().logEvent("search-initiated", { 
+		property_address: searchInput.value
+	});
+
 	spinner.style.display = "block";
 	const { results } = await netlifyFunction('search', {
 		body: JSON.stringify({query: value}),
