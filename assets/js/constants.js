@@ -13,7 +13,7 @@ var relativeSizeColumn = "Nombre de logements";
 // Database reference
 var databaseCollectionName = "features";
 // JSON search
-var searchIndexUrl = "/search-index.json";
+var searchIndexUrl = "assets/js/search-index.json";
 // Map tiles
 var tiles = `${window.location.origin}/features/{z}/{x}/{y}.pbf`;
 

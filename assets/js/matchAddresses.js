@@ -33,12 +33,14 @@ const matchAddresses = async function (query) {
 	});
 
 	spinner.style.display = "block";
-	const { results } = await netlifyFunction('search', {
-		body: JSON.stringify({query: value}),
-		method: 'POST'
-	})
-	spinner.style.display = "none";
+	
+	// const { results } = await netlifyFunction('search', {
+	// 	body: JSON.stringify({query: value}),
+	// 	method: 'POST'
+	// })
 
+	const results = await flex.search(value, searchResultsLimit + 1)
+	spinner.style.display = "none";		
 	// Show "x"
 	renderClearButton(value);
 	// Reset rendered objects
