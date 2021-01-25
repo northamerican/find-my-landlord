@@ -66,6 +66,28 @@ function showPropertiesProcessFilter () {
 var navigationControl = new mapboxgl.NavigationControl();
 map.addControl(navigationControl, "top-right");
 
+let flex
+let searchIndex = {}
+
+async function getSearchIndex () {
+	const searchIndexResponse = await fetch(searchIndexUrl)
+	const searchIndexJSON = await searchIndexResponse.json()
+	searchIndex = searchIndexJSON.searchIndex
+
+	flex = new FlexSearch({
+		encode: "simple",
+		profile: "fast",
+		// async: true,
+		doc: {
+			id: propertyIndexColumn,
+			field: ["search"]
+		},
+	})
+
+	console.log('flex.add')
+	await flex.add(searchIndex)
+	console.log('flex.add done')
+}
 
 map.on("load", function() {
 	// Set source data
@@ -120,6 +142,8 @@ map.on("load", function() {
 		// Allow hover and click
 		setHoverState("propertyData", "features", "allProperties");
 	};
+
+	await getSearchIndex()
 
 	// Hide spinner
 	spinner.style.display = "none";
