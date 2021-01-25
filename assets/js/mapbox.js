@@ -143,7 +143,7 @@ map.on("load", function() {
 		setHoverState("propertyData", "features", "allProperties");
 	};
 
-	await getSearchIndex()
+	getSearchIndex()
 
 	// Hide spinner
 	spinner.style.display = "none";
