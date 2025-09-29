@@ -1,6 +1,6 @@
 Montreal version of [Chicago DSA](https://github.com/ChicagoDSA)'s [Find My Landlord](https://github.com/ChicagoDSA/find-my-landlord) web app.
 
-http://findmylandlord.qc.to/
+http://findmylandlord.netlify.app
 
 # Find My Landlord
 This tool allows you to:
