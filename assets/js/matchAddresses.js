@@ -2,6 +2,7 @@ var searchResultsLimit = 50;
 
 // i18next ui translations
 appTitle.innerHTML = i18next.t('TITLE')
+datedWarning.innerHTML = i18next.t('DATED_WARNING')
 getHelpLinks.innerHTML = i18next.t('GET_HELP')
 legalNoticeLink.innerHTML = `<b>${i18next.t('LEGAL_NOTICE_TITLE')}</b>`
 affiliatedLabel.innerHTML = i18next.t('AFFILIATED_LABEL')

@@ -1,151 +1,148 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Made with love and solidarity during the COVID-19 pandemic of 2020. Housing is a human right. -->
 
-		<meta charset="utf-8">
-		<title>Find My Landlord | Montréal</title>
-		<meta name="description" content="Locataires montréalais: à qui appartient votre bâtiment? Trouvez votre propriétaire et ses propriétés. / Montréal renters: who owns your building? Find your landlord and find their properties.">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<!-- Made with love and solidarity during the COVID-19 pandemic of 2020. Housing is a human right. -->
 
+	<meta charset="utf-8">
+	<title>Find My Landlord | Montréal</title>
+	<meta name="description"
+		content="Locataires montréalais: à qui appartient votre bâtiment? Trouvez votre propriétaire et ses propriétés. / Montréal renters: who owns your building? Find your landlord and find their properties.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<!-- Open Graph tags for social media -->
-		<meta property="og:title" content="Find My Landlord | Montréal">
-		<meta property="og:description" content="Locataires montréalais: à qui appartient votre bâtiment? Trouvez votre propriétaire et ses propriétés. / Montréal renters: who owns your building? Find your landlord and find their properties.">
+	<!-- Open Graph tags for social media -->
+	<meta property="og:title" content="Find My Landlord | Montréal">
+	<meta property="og:description"
+		content="Locataires montréalais: à qui appartient votre bâtiment? Trouvez votre propriétaire et ses propriétés. / Montréal renters: who owns your building? Find your landlord and find their properties.">
 
-		<meta property="og:site_name" content="Find My Landlord | Montréal">
-		<meta property="og:url" content="https://findmylandlord.netlify.app/">
-		<meta property="og:type" content="website">
-		<meta property="og:image" content="https://findmylandlord.netlify.app/assets/images/find-my-landlord-og-image.jpg">
+	<meta property="og:site_name" content="Find My Landlord | Montréal">
+	<meta property="og:url" content="https://findmylandlord.netlify.app/">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://findmylandlord.netlify.app/assets/images/find-my-landlord-og-image.jpg">
 
-		<!-- Enables Twitter support -->
-		<meta name="twitter:card" content="summary">
+	<!-- Enables Twitter support -->
+	<meta name="twitter:card" content="summary">
 
-		<!-- Mapbox requirements -->
-		<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
-		<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css">
-		
-		<link rel="stylesheet" href="assets/css/style.css">
-		<!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+	<!-- Mapbox requirements -->
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+	<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css">
 
-		<!-- preload essential fonts -->
-		<link rel="preload" href="assets/fonts/ManifoldDSA/ManifoldDSA-Medium.woff" as="font" type="font/woff" crossorigin>
-		<link rel="preload" href="assets/fonts/ManifoldDSA/ManifoldDSA-ExtraBold.woff" as="font" type="font/woff" crossorigin>
-		<link rel="preload" href="assets/fonts/FontAwesome/fa-solid-900.woff" as="font" type="font/woff" crossorigin>
-	</head>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
 
-	<body>
-		<div id="map"></div>
+	<!-- preload essential fonts -->
+	<link rel="preload" href="assets/fonts/ManifoldDSA/ManifoldDSA-Medium.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" href="assets/fonts/ManifoldDSA/ManifoldDSA-ExtraBold.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" href="assets/fonts/FontAwesome/fa-solid-900.woff" as="font" type="font/woff" crossorigin>
+</head>
 
-		<div id="spinner">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
+<body>
+	<div id="map"></div>
+
+	<div id="spinner">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+	<div id="top-container">
+		<div id="title">
+			<h2 id="app-title"></h2>
+			<div id="get-help">
+				<p id="get-help-links"></p>
+				<p>
+					<a id="switch-lang-link" href=""></a> •
+					<a href="javascript:;" id="legal-notice"></a>
+				</p>
+			</div>
+		</div>
+		<div id="search-input-container">
+			<input id="search-input" name="search" type="text" spellcheck="false" placeholder="" />
+			<div id="clear" tabindex="0"><img src="assets/images/times-dark.svg" /></div>
+			<button id="search-button"></button>
 		</div>
 
-		<div id="top-container">
-			<div id="title">
-				<h2 id="app-title"></h2>
-				<div id="get-help">
-					<p id="get-help-links"></p>
-					<p>
-						<a id="switch-lang-link" href=""></a> •
-						<a href="javascript:;" id="legal-notice"></a>
-					</p>
+		<div id="search-results-container">
+			<div id="search-results-counter"></div>
+			<ul id="search-results-list"></ul>
+			<div id="selected-container">
+				<table id="info-table">
+					<tr id="affiliated-row">
+						<td id="affiliated-label"></td>
+						<td id="affiliated-value"></td>
+					</tr>
+					<tr id="owned-row">
+						<td id="owned-label"></td>
+						<td>
+							<span id="owned-value"></span>
+							<button id="view-on-map"></button>
+						</td>
+					</tr>
+					<tr id="taxpayer-row">
+						<td id="taxpayer-label"></td>
+						<td id="taxpayer-value"></td>
+					</tr>
+					<tr id="units-row">
+						<td id="units-label"></td>
+						<td id="units-value"></td>
+					</tr>
+				</table>
+				<button id="download-button" class="button-hover"></button>
+				<div id="bottom-links">
+					<p id="data-info-link" class="property-details-link" tabindex="0"></p>
+					<p id="additional-details-link" class="property-details-link" tabindex="0"></p>
+					<div style="clear: both;"></div>
 				</div>
 			</div>
-			<div id="search-input-container">
-				<input
-					id="search-input"
-					name="search"
-					type="text"
-					spellcheck="false"
-					placeholder=""
-				/>
-				<div id="clear" tabindex="0"><img src="assets/images/times-dark.svg" /></div>
-				<button id="search-button"></button>
-			</div>
-
-			<div id="search-results-container">
-				<div id="search-results-counter"></div>
-				<ul id="search-results-list"></ul>
-				<div id="selected-container">
-					<table id="info-table">
-						<tr id="affiliated-row">
-							<td id="affiliated-label"></td>
-							<td id="affiliated-value"></td>
-						</tr>
-						<tr id="owned-row">
-							<td id="owned-label"></td>
-							<td>
-								<span id="owned-value"></span>
-								<button id="view-on-map"></button>
-							</td>
-						</tr>
-						<tr id="taxpayer-row">
-							<td id="taxpayer-label"></td>
-							<td id="taxpayer-value"></td>
-						</tr>
-						<tr id="units-row">
-							<td id="units-label"></td>
-							<td id="units-value"></td>
-						</tr>
-					</table>
-					<button id="download-button" class="button-hover"></button>
-					<div id="bottom-links">
-						<p id="data-info-link" class="property-details-link" tabindex="0"></p>
-						<p id="additional-details-link" class="property-details-link" tabindex="0"></p>
-						<div style="clear: both;"></div>
-					</div>
-				</div>
-			</div>
-
 		</div>
+		<p id="dated-warning"></p>
+	</div>
 
-		<!-- Google Cloud Firebase -->
-		<script src="assets/js/firebase-app.js"></script>
-		<script src="assets/js/firebase-analytics.js"></script>
-		<script src="assets/js/firebase-auth.js"></script>
-		<script src="assets/js/firebase-firestore.js"></script>
+	<!-- Google Cloud Firebase -->
+	<script src="assets/js/firebase-app.js"></script>
+	<script src="assets/js/firebase-analytics.js"></script>
+	<script src="assets/js/firebase-auth.js"></script>
+	<script src="assets/js/firebase-firestore.js"></script>
 
-		<!-- jsPDF -->
-		<script src="assets/js/jspdf.min.js"></script>
+	<!-- jsPDF -->
+	<script src="assets/js/jspdf.min.js"></script>
 
-		<!-- i18next -->
-		<script src="assets/js/i18next.min.js"></script>
-		
-		<!-- jsPDF-AutoTable -->
-		<script src="assets/js/jspdf.plugin.autotable.js"></script>
+	<!-- i18next -->
+	<script src="assets/js/i18next.min.js"></script>
 
-		<!-- jsPDF fonts -->
-		<script src="assets/fonts/ManifoldDSA/js/ManifoldDSA-normal.js"></script>
-		<script src="assets/fonts/ManifoldDSA/js/ManifoldDSA-bold.js"></script>
+	<!-- jsPDF-AutoTable -->
+	<script src="assets/js/jspdf.plugin.autotable.js"></script>
 
-		<!-- IE helper -->
-		<script src="assets/js/checkIE.js"></script>
+	<!-- jsPDF fonts -->
+	<script src="assets/fonts/ManifoldDSA/js/ManifoldDSA-normal.js"></script>
+	<script src="assets/fonts/ManifoldDSA/js/ManifoldDSA-bold.js"></script>
 
-		<!-- Constants -->
-		<script src="assets/js/constants.js"></script>
+	<!-- IE helper -->
+	<script src="assets/js/checkIE.js"></script>
 
-		<!-- Database -->
-		<script src="assets/js/firebase.js"></script>
+	<!-- Constants -->
+	<script src="assets/js/constants.js"></script>
 
-		<script src="assets/js/i18n.js"></script>
+	<!-- Database -->
+	<script src="assets/js/firebase.js"></script>
 
-		<!-- search -->
-		<script src="assets/js/flexsearch.js"></script>
+	<script src="assets/js/i18n.js"></script>
 
-		<!-- Map rendering -->
-		<script src="assets/js/mapbox.js"></script>
-		<script src="assets/js/onResize.js"></script>
-		<script src="assets/js/centerMap.js"></script>
-		<script src="assets/js/reset.js"></script>
+	<!-- search -->
+	<script src="assets/js/flexsearch.js"></script>
 
-		<!-- Building selection -->
-		<script src="assets/js/matchAddresses.js"></script>
-		<script src="assets/js/attachModal.js"></script>
-		<script src="assets/js/getProperty.js"></script>
-		<script src="assets/js/createPDF.js"></script>
-	</body>
-</html>      
+	<!-- Map rendering -->
+	<script src="assets/js/mapbox.js"></script>
+	<script src="assets/js/onResize.js"></script>
+	<script src="assets/js/centerMap.js"></script>
+	<script src="assets/js/reset.js"></script>
+
+	<!-- Building selection -->
+	<script src="assets/js/matchAddresses.js"></script>
+	<script src="assets/js/attachModal.js"></script>
+	<script src="assets/js/getProperty.js"></script>
+	<script src="assets/js/createPDF.js"></script>
+</body>
+
+</html>

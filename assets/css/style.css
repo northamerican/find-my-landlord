@@ -149,6 +149,18 @@ h5 {
 	}
 }
 
+/* Out of date warning */
+
+#dated-warning {
+	margin: 0;
+	padding: 3px;
+	background: #ec1f27;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+}
+
+
 /* Focus */
 
 *:focus {

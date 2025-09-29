@@ -97,6 +97,7 @@ var ownedValue = document.getElementById("owned-value");
 var viewOnMap = document.getElementById("view-on-map");
 
 var appTitle = document.getElementById("app-title");
+var datedWarning = document.getElementById("dated-warning");
 var getHelpLinks = document.getElementById("get-help-links");
 var legalNoticeLink = document.getElementById("legal-notice");
 
