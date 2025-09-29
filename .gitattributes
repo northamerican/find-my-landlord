@@ -1,2 +1,0 @@
-features/**/* filter=lfs diff=lfs merge=lfs -text
-features/**/* !text !filter !merge !diff
