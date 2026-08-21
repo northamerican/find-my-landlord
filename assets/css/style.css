@@ -160,6 +160,16 @@ h5 {
 	font-size: 14px;
 }
 
+#dated-warning a {
+	color: white;
+	text-decoration: underline;
+}
+
+#dated-warning a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
 
 /* Focus */
 
