@@ -1,3 +1,6 @@
+> [!NOTE]
+> August 2026: A new site with recent property ownership data can be found at https://fuckmylandlord.net/montreal ✊
+
 Montreal version of [Chicago DSA](https://github.com/ChicagoDSA)'s [Find My Landlord](https://github.com/ChicagoDSA/find-my-landlord) web app.
 
 http://findmylandlord.netlify.app
